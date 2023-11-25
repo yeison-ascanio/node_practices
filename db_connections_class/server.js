@@ -5,10 +5,10 @@ import Sequelize from "sequelize"
 // let db = new sqlite3.Database("project_backend") instancia de sqlite que ya no se usara
 
 //instancia del orm y la configuracion para que use como motor sqlite y la ubicacion de la bd
-const sequelize = new Sequelize("project_backend", null, null,{
-    dialect: "sqlite",
-    storage: "./project_backend"
-})
+// const sequelize = new Sequelize("project_backend", null, null,{
+//     dialect: "sqlite",
+//     storage: "./project_backend"
+// })
 
 const app = express()
 app.use(express.urlencoded({ extended : true }))
