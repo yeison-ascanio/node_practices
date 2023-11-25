@@ -11,7 +11,9 @@ import Sequelize from "sequelize"
 // })
 
 const app = express()
+
 app.use(express.urlencoded({ extended : true }))
+app.use("view engine", "pug")
 
 app.post("/pendientes", function(req, res){
     console.log(req.body.description);
