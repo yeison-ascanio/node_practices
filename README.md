@@ -1,6 +1,6 @@
 # node_practices
-> .[!NOTE]
+> [!NOTE]
 > Repositorio personal sobre el aprendizaje de express en el ambiente de nodeJS
 
-> .[!TIP]
+> [!TIP]
 > Permanece en constante aprendizaje pequeño padawan ;)
