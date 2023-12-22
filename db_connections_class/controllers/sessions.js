@@ -5,10 +5,20 @@ module.exports = {
     },
     create: function (req, res) {
         User.login(req.body.email, req.body.password)
-            .then(user => res.json(user))
+            .then(user => {
+                if (user) {
+                    req.session.userId = user.id
+                }
+                res.json(user)
+            })
             .catch(err => {
                 console.log(err)
                 res.json(err)
             })
+    },
+    destroy: function (req, res) {
+        req.session.destroy(function(){
+            res.redirect("/sessions")
+        })
     }
 }
