@@ -1,0 +1,11 @@
+doctype html 
+html
+    head 
+        title Categorias 
+    body
+        h2 Categorias
+        ul 
+            each category in categories 
+                li= category.title  
+                li
+                    span(style=`display: inline-block; width: 20px; height: 20px; background-color: ${category.color}`) 

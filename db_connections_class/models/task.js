@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const socket = require('../realTime/client');
 module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
     /**
@@ -13,11 +14,20 @@ module.exports = (sequelize, DataTypes) => {
       Task.belongsTo(models.User, {
         as: "user"
       })
+      Task.belongsToMany(models.Category, {
+        through: "TaskCategories",
+        as: "categories"
+      })
     }
   }
   Task.init({
     description: DataTypes.TEXT
   }, {
+    hooks: {
+      afterCreate : (function(task,options){
+        socket.emit("new_task", {task})
+      })
+    },
     sequelize,
     modelName: 'Task',
   });

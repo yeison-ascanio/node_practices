@@ -4,5 +4,6 @@ html
         title Tareas
     body
        form(action=`/tasks/${task.id}?_method=PUT` method="post") 
+        input(type="text" name="categories" placeholder="Id de categorias separado por coma")
         textarea(name="description" placeholder="Escribe la descripción")= task.description
         input(type="submit" value="Guardar")

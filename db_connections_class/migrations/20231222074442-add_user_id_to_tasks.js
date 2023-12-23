@@ -9,7 +9,6 @@ module.exports = {
         model: {
           tableName: "Users"
         },
-        model: "User",
         key: "id"
       }
     })
